@@ -82,4 +82,40 @@ class LinkedList {
 
         System.out.println();
     }
+
+    // Time Complexity: O(n)
+    public void reverse() {
+        if (head == null) {
+            return;
+        }
+
+        Node previous = null;
+        Node current = head;
+
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        head = previous;
+    }
+
+    // Time Complexity: O(n)
+    public Node getMiddleNode() {
+        if (head == null) {
+            throw new RuntimeException("Linked list is empty");
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
 }
