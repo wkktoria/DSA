@@ -1,8 +1,8 @@
 package io.github.wkktoria.dsa.data_structures.linear.linked_list;
 
-class LinkedList {
-    private Node head;
-    private Node tail;
+class LinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
 
     LinkedList() {
         this.head = null;
@@ -10,8 +10,8 @@ class LinkedList {
     }
 
     // Time Complexity: O(1)
-    void prepend(String data) {
-        Node newNode = new Node(data);
+    void prepend(T data) {
+        Node<T> newNode = new Node<>(data);
 
         if (head == null) {
             head = newNode;
@@ -24,8 +24,8 @@ class LinkedList {
     }
 
     // Time Complexity: O(1)
-    void append(String data) {
-        Node newNode = new Node(data);
+    void append(T data) {
+        Node<T> newNode = new Node<>(data);
 
         if (head == null) {
             head = newNode;
@@ -38,7 +38,7 @@ class LinkedList {
     }
 
     // Time Complexity: when removing first element O(1), otherwise O(n)
-    void remove(String data) {
+    void remove(T data) {
         if (head == null) {
             return;
         }
@@ -54,7 +54,7 @@ class LinkedList {
             return;
         }
 
-        Node current = head;
+        Node<T> current = head;
 
         while (current.next != null) {
             if (current.next.data == data) {
@@ -73,7 +73,7 @@ class LinkedList {
 
     // Time Complexity: O(n)
     void print() {
-        Node current = head;
+        Node<T> current = head;
 
         while (current != null) {
             System.out.print(current.data + " ");
@@ -89,11 +89,11 @@ class LinkedList {
             return;
         }
 
-        Node previous = null;
-        Node current = head;
+        Node<T> previous = null;
+        Node<T> current = head;
 
         while (current != null) {
-            Node next = current.next;
+            Node<T> next = current.next;
             current.next = previous;
             previous = current;
             current = next;
@@ -103,13 +103,13 @@ class LinkedList {
     }
 
     // Time Complexity: O(n)
-    public Node getMiddleNode() {
+    public Node<T> getMiddleNode() {
         if (head == null) {
             throw new RuntimeException("Linked list is empty");
         }
 
-        Node slow = head;
-        Node fast = head;
+        Node<T> slow = head;
+        Node<T> fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;

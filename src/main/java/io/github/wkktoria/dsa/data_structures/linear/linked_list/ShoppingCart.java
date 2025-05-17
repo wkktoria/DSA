@@ -1,10 +1,10 @@
 package io.github.wkktoria.dsa.data_structures.linear.linked_list;
 
 class ShoppingCart {
-    private LinkedList items;
+    private LinkedList<String> items;
 
     ShoppingCart() {
-        items = new LinkedList();
+        items = new LinkedList<>();
     }
 
     void addItem(String itemName) {

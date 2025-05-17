@@ -1,10 +1,10 @@
 package io.github.wkktoria.dsa.data_structures.linear.linked_list;
 
-class Node {
-    String data;
-    Node next;
+class Node<T> {
+    T data;
+    Node<T> next;
 
-    Node(String data) {
+    Node(T data) {
         this.data = data;
         this.next = null;
     }
