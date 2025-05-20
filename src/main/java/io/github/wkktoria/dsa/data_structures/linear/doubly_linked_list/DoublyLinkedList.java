@@ -1,8 +1,8 @@
 package io.github.wkktoria.dsa.data_structures.linear.doubly_linked_list;
 
 public class DoublyLinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
+    Node<T> head;
+    Node<T> tail;
 
     DoublyLinkedList() {
         this.head = null;
